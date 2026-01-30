@@ -2785,7 +2785,10 @@
         const scrollToTopBtn = document.getElementById('scrollToTop');
         
         window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (window.pageYOffset / scrollHeight) * 100;
+            
+            if (scrollPercentage > 50) {
                 scrollToTopBtn.classList.add('visible');
             } else {
                 scrollToTopBtn.classList.remove('visible');
