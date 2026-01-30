@@ -809,6 +809,52 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(128, 64, 192, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--primary-hover);
+            transform: translateY(0) scale(1.05);
+            box-shadow: 0 6px 16px rgba(128, 64, 192, 0.4);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+                bottom: 24px;
+                right: 24px;
+            }
+        }
     </style>
 </head>
 <body>
