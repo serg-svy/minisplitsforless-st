@@ -855,6 +855,202 @@
                 right: 24px;
             }
         }
+
+        /* Campaign Calendar Styles */
+        .campaign-calendar {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .calendar-day-name {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            padding: 8px 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 8px;
+            background: var(--bg-card);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 80px;
+            transition: all 0.2s ease;
+        }
+
+        .calendar-day .day-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .calendar-day.has-event {
+            cursor: pointer;
+            border-width: 2px;
+        }
+
+        .calendar-day.has-event:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calendar-day.educational {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%);
+            border-color: #1976d2;
+        }
+
+        .calendar-day.calendar-holiday {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%);
+            border-color: #f57c00;
+        }
+
+        .calendar-day.educational.calendar-holiday {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffe0b2 100%);
+            border-color: #8040c0;
+        }
+
+        .event-marker {
+            font-size: 10px;
+            line-height: 1.3;
+            color: var(--text-primary);
+            font-weight: 500;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .calendar-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 2px solid;
+        }
+
+        .legend-color.educational {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%);
+            border-color: #1976d2;
+        }
+
+        .legend-color.calendar-holiday {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%);
+            border-color: #f57c00;
+        }
+
+        .legend-color.combined {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffe0b2 100%);
+            border-color: #8040c0;
+        }
+
+        /* Responsive Calendar */
+        @media (max-width: 1024px) {
+            .calendar-day {
+                min-height: 70px;
+                padding: 6px;
+            }
+
+            .event-marker {
+                font-size: 9px;
+            }
+
+            .calendar-day .day-number {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .calendar-day {
+                min-height: 60px;
+                padding: 4px;
+            }
+
+            .event-marker {
+                font-size: 8px;
+            }
+
+            .calendar-day .day-number {
+                font-size: 12px;
+            }
+
+            .calendar-grid {
+                gap: 4px;
+            }
+
+            .calendar-header {
+                gap: 4px;
+            }
+
+            .calendar-day-name {
+                font-size: 10px;
+                padding: 6px 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-day {
+                min-height: 50px;
+                padding: 3px;
+                border-radius: 6px;
+            }
+
+            .event-marker {
+                font-size: 7px;
+            }
+
+            .calendar-day .day-number {
+                font-size: 11px;
+                margin-bottom: 2px;
+            }
+
+            .calendar-legend {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .legend-item {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2212,9 +2408,105 @@
                 </ul>
             </div>
 
+            <!-- Interactive Calendar for February 2026 -->
+            <div class="card" style="margin-top: 24px; padding: 24px;">
+                <h3 style="color: #1976d2; margin-top: 0; margin-bottom: 20px;">📅 February 2026 Campaign Calendar</h3>
+                <div class="campaign-calendar">
+                    <div class="calendar-header">
+                        <div class="calendar-day-name">Sun</div>
+                        <div class="calendar-day-name">Mon</div>
+                        <div class="calendar-day-name">Tue</div>
+                        <div class="calendar-day-name">Wed</div>
+                        <div class="calendar-day-name">Thu</div>
+                        <div class="calendar-day-name">Fri</div>
+                        <div class="calendar-day-name">Sat</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Week 1: Feb 1 is Sunday -->
+                        <div class="calendar-day"><span class="day-number">1</span></div>
+                        <div class="calendar-day"><span class="day-number">2</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-3-seer2">
+                            <span class="day-number">3</span>
+                            <div class="event-marker">🎓 SEER2 Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">4</span></div>
+                        <div class="calendar-day"><span class="day-number">5</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-3-seer2">
+                            <span class="day-number">6</span>
+                            <div class="event-marker">🎓 SEER2 Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">7</span></div>
+                        
+                        <!-- Week 2 -->
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#feb-8-superbowl">
+                            <span class="day-number">8</span>
+                            <div class="event-marker">📅 Super Bowl</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">9</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-10-energy">
+                            <span class="day-number">10</span>
+                            <div class="event-marker">🎓 Energy Bills</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">11</span></div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#feb-12-valentine">
+                            <span class="day-number">12</span>
+                            <div class="event-marker">📅 Valentine's</div>
+                        </div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-10-energy">
+                            <span class="day-number">13</span>
+                            <div class="event-marker">🎓 Energy Bills<br>📅 Valentine's</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">14</span></div>
+                        
+                        <!-- Week 3 -->
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#feb-15-presidents">
+                            <span class="day-number">15</span>
+                            <div class="event-marker">📅 Presidents' Day</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#feb-15-presidents">
+                            <span class="day-number">16</span>
+                            <div class="event-marker">📅 Presidents' Day</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday educational" data-scroll="#feb-15-presidents">
+                            <span class="day-number">17</span>
+                            <div class="event-marker">📅 Presidents' Day<br>🎓 Backup Heat</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">18</span></div>
+                        <div class="calendar-day"><span class="day-number">19</span></div>
+                        <div class="calendar-day"><span class="day-number">20</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-17-backup">
+                            <span class="day-number">21</span>
+                            <div class="event-marker">🎓 Backup Heat</div>
+                        </div>
+                        
+                        <!-- Week 4 -->
+                        <div class="calendar-day"><span class="day-number">22</span></div>
+                        <div class="calendar-day"><span class="day-number">23</span></div>
+                        <div class="calendar-day"><span class="day-number">24</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#feb-17-backup">
+                            <span class="day-number">25</span>
+                            <div class="event-marker">🎓 Backup Heat</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">26</span></div>
+                        <div class="calendar-day"><span class="day-number">27</span></div>
+                        <div class="calendar-day"><span class="day-number">28</span></div>
+                    </div>
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-color educational"></span>
+                            <span>🎓 Educational Campaign</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color calendar-holiday"></span>
+                            <span>📅 Calendar Holiday (kastalia Palma)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h3 style="color: #1976d2; margin-top: 32px;">📆 Chronological Campaign Calendar</h3>
 
-            <h4 style="margin-top: 24px;">Feb 3, 6 — SEER vs SEER2 Education <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <h4 id="feb-3-seer2" style="margin-top: 24px;">Feb 3, 6 — SEER vs SEER2 Education <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Why 2026 SEER2 Ratings Matter for Your Energy Bill"</div>
                 <ul style="line-height: 1.8;">
@@ -2240,7 +2532,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Feb 8 — Super Bowl Weekend <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <h4 id="feb-8-superbowl" style="margin-top: 24px;">Feb 8 — Super Bowl Weekend <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Upgrade Your Comfort Zone This Season"</div>
                 <ul style="line-height: 1.8;">
@@ -2259,7 +2551,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Feb 10, 13 — Winter Energy Bills Education <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <h4 id="feb-10-energy" style="margin-top: 24px;">Feb 10, 13 — Winter Energy Bills Education <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Why Your Heating Bill Is So High—And How to Fix It"</div>
                 <ul style="line-height: 1.8;">
@@ -2285,7 +2577,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Feb 12-13 — Valentine's Day <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <h4 id="feb-12-valentine" style="margin-top: 24px;">Feb 12-13 — Valentine's Day <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Show Your Home Some Love"</div>
                 <ul style="line-height: 1.8;">
@@ -2305,7 +2597,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Feb 15-17 — Presidents' Day Weekend <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <h4 id="feb-15-presidents" style="margin-top: 24px;">Feb 15-17 — Presidents' Day Weekend <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Presidents' Day Sale: Smart Decisions for Smart Homeowners"</div>
                 <ul style="line-height: 1.8;">
@@ -2380,9 +2672,123 @@
                 </ul>
             </div>
 
+            <!-- Interactive Calendar for March 2026 -->
+            <div class="card" style="margin-top: 24px; padding: 24px;">
+                <h3 style="color: #388e3c; margin-top: 0; margin-bottom: 20px;">📅 March 2026 Campaign Calendar</h3>
+                <div class="campaign-calendar">
+                    <div class="calendar-header">
+                        <div class="calendar-day-name">Sun</div>
+                        <div class="calendar-day-name">Mon</div>
+                        <div class="calendar-day-name">Tue</div>
+                        <div class="calendar-day-name">Wed</div>
+                        <div class="calendar-day-name">Thu</div>
+                        <div class="calendar-day-name">Fri</div>
+                        <div class="calendar-day-name">Sat</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Week 1: Mar 1 is Sunday -->
+                        <div class="calendar-day"><span class="day-number">1</span></div>
+                        <div class="calendar-day"><span class="day-number">2</span></div>
+                        <div class="calendar-day has-event educational calendar-holiday" data-scroll="#mar-3-taxrefund">
+                            <span class="day-number">3</span>
+                            <div class="event-marker">📅🎓 Tax Refund</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">4</span></div>
+                        <div class="calendar-day"><span class="day-number">5</span></div>
+                        <div class="calendar-day"><span class="day-number">6</span></div>
+                        <div class="calendar-day has-event educational calendar-holiday" data-scroll="#mar-3-taxrefund">
+                            <span class="day-number">7</span>
+                            <div class="event-marker">📅🎓 Tax Refund</div>
+                        </div>
+                        
+                        <!-- Week 2 -->
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-8-spring">
+                            <span class="day-number">8</span>
+                            <div class="event-marker">📅 Spring Forward</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-8-spring">
+                            <span class="day-number">9</span>
+                            <div class="event-marker">📅 Spring Forward</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday educational" data-scroll="#mar-8-spring">
+                            <span class="day-number">10</span>
+                            <div class="event-marker">📅 Spring Forward<br>🎓 Installation</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">11</span></div>
+                        <div class="calendar-day has-event educational calendar-holiday" data-scroll="#mar-3-taxrefund">
+                            <span class="day-number">12</span>
+                            <div class="event-marker">📅🎓 Tax Refund</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">13</span></div>
+                        <div class="calendar-day"><span class="day-number">14</span></div>
+                        
+                        <!-- Week 3 -->
+                        <div class="calendar-day"><span class="day-number">15</span></div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-16-stpatrick">
+                            <span class="day-number">16</span>
+                            <div class="event-marker">📅 St. Patrick's</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday educational" data-scroll="#mar-16-stpatrick">
+                            <span class="day-number">17</span>
+                            <div class="event-marker">📅 St. Patrick's<br>🎓 Installation</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">18</span></div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-19-equinox">
+                            <span class="day-number">19</span>
+                            <div class="event-marker">📅 Spring Equinox</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-19-equinox">
+                            <span class="day-number">20</span>
+                            <div class="event-marker">📅 Spring Equinox</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#mar-19-equinox">
+                            <span class="day-number">21</span>
+                            <div class="event-marker">📅 Spring Equinox</div>
+                        </div>
+                        
+                        <!-- Week 4 -->
+                        <div class="calendar-day"><span class="day-number">22</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#mar-23-r454b">
+                            <span class="day-number">23</span>
+                            <div class="event-marker">🎓 R454B Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">24</span></div>
+                        <div class="calendar-day"><span class="day-number">25</span></div>
+                        <div class="calendar-day"><span class="day-number">26</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#mar-23-r454b">
+                            <span class="day-number">27</span>
+                            <div class="event-marker">🎓 R454B Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">28</span></div>
+                        
+                        <!-- Week 5 -->
+                        <div class="calendar-day"><span class="day-number">29</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#mar-23-r454b">
+                            <span class="day-number">30</span>
+                            <div class="event-marker">🎓 R454B Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">31</span></div>
+                    </div>
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-color educational"></span>
+                            <span>🎓 Educational Campaign</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color calendar-holiday"></span>
+                            <span>📅 Calendar Holiday (kastalia Palma)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color combined"></span>
+                            <span>📅🎓 Combined Campaign</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h3 style="color: #388e3c; margin-top: 32px;">📆 Chronological Campaign Calendar</h3>
 
-            <h4 style="margin-top: 24px;">Mar 3, 7, 12 — Tax Refund Smart Investment <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma) + 🎓 Educational</span></h4>
+            <h4 id="mar-3-taxrefund" style="margin-top: 24px;">Mar 3, 7, 12 — Tax Refund Smart Investment <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma) + 🎓 Educational</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Turn Your Tax Refund Into Year-Round Savings"</div>
                 <ul style="line-height: 1.8;">
@@ -2434,7 +2840,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Mar 10, 17 — Spring Prep & Installation Timing <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <h4 id="mar-10-installation" style="margin-top: 24px;">Mar 10, 17 — Spring Prep & Installation Timing <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Why March Is the Smart Time to Install"</div>
                 <ul style="line-height: 1.8;">
@@ -2460,7 +2866,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Mar 16-17 — St. Patrick's Day <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <h4 id="mar-16-stpatrick" style="margin-top: 24px;">Mar 16-17 — St. Patrick's Day <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Lucky Savings: Get Green with Energy Efficiency"</div>
                 <ul style="line-height: 1.8;">
@@ -2481,7 +2887,7 @@
                 </ul>
             </div>
 
-            <h4 style="margin-top: 24px;">Mar 19-21 — Spring Equinox / First Day of Spring <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <h4 id="mar-19-equinox" style="margin-top: 24px;">Mar 19-21 — Spring Equinox / First Day of Spring <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
             <div class="card">
                 <div class="card-title">Campaign: "Spring is Here—Are You Ready for Summer?"</div>
                 <ul style="line-height: 1.8;">
@@ -3804,6 +4210,47 @@
                     }
                 }
             }
+        });
+
+        // Calendar day click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to all calendar days with events
+            const calendarDays = document.querySelectorAll('.calendar-day.has-event');
+            
+            calendarDays.forEach(day => {
+                day.addEventListener('click', function() {
+                    const targetSelector = this.getAttribute('data-scroll');
+                    if (targetSelector) {
+                        const targetElement = document.querySelector(targetSelector);
+                        if (targetElement) {
+                            // Smooth scroll to the campaign details
+                            targetElement.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                            
+                            // Add highlight effect
+                            targetElement.style.transition = 'background-color 0.5s ease';
+                            const originalBg = window.getComputedStyle(targetElement).backgroundColor;
+                            targetElement.style.backgroundColor = '#fff3cd';
+                            
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = originalBg;
+                            }, 1500);
+                        }
+                    }
+                });
+                
+                // Add visual feedback on hover
+                day.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                day.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
         });
     </script>
 
