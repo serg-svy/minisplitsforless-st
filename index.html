@@ -3815,6 +3815,53 @@
                 behavior: 'smooth'
             });
         }
+
+        // Handle hash navigation on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                // Remove the # symbol
+                const targetId = hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Check if target is inside a content section
+                    const parentSection = targetElement.closest('.content-section');
+                    if (parentSection) {
+                        // Show the parent section first
+                        showSection(parentSection.id);
+                        // Wait for section to be visible, then scroll to target
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    } else {
+                        // Direct scroll if no parent section
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+        });
+
+        // Handle hash changes (when clicking anchor links)
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetId = hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const parentSection = targetElement.closest('.content-section');
+                    if (parentSection) {
+                        showSection(parentSection.id);
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    } else {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+        });
     </script>
 
     <!-- Scroll to top button -->
