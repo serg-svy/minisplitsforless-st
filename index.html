@@ -898,6 +898,12 @@
             transition: all 0.2s ease;
         }
 
+        .calendar-day.empty {
+            background: transparent;
+            border: none;
+            pointer-events: none;
+        }
+
         .calendar-day .day-number {
             font-size: 14px;
             font-weight: 600;
@@ -1139,6 +1145,9 @@
             </a>
             <a class="sidebar-subitem" href="#email-march">
                 <span data-ru="Март 2026" data-en="March 2026">March 2026</span>
+            </a>
+            <a class="sidebar-subitem" href="#email-april">
+                <span data-ru="Апрель 2026" data-en="April 2026">April 2026</span>
             </a>
             <a class="sidebar-subitem" href="#email-automated-flows">
                 <span data-ru="Automated Flows" data-en="Automated Flows">Automated Flows</span>
@@ -2936,7 +2945,7 @@
                 </ul>
             </div>
 
-            <h3 style="color: #388e3c; margin-top: 48px;"> Cart Recovery & Automated Flows</h3>
+            <h3 style="color: #388e3c; margin-top: 48px;">🛒 Cart Recovery & Automated Flows</h3>
             <div class="card">
                 <p><strong>Always-On Automation:</strong> Same flows as February continue throughout March</p>
                 <ul style="line-height: 1.8;">
@@ -2944,6 +2953,276 @@
                     <li><strong>Cart Abandonment (Day 7):</strong> 7% final offer</li>
                     <li><strong>Browse Abandonment (Day 5):</strong> Educational content + Sale collection link</li>
                     <li><strong>Checkout Abandonment (24 hours):</strong> 10% aggressive recovery</li>
+                </ul>
+            </div>
+
+            <h2 id="email-april" style="margin-top: 64px; color: var(--primary);">📅 April 2026 — Peak Season Preparation</h2>
+            <p class="subtitle">All campaigns in chronological order: Educational + Calendar + Cart Recovery</p>
+
+            <div class="card" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 4px solid #f57c00;">
+                <h3 style="color: #f57c00; margin-top: 0;">April Strategic Overview</h3>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Focus:</strong> Pre-peak season urgency + Earth Day sustainability + Spring installation rush</li>
+                    <li><strong>Total Touches:</strong> 12 email sends (4 educational + 2 calendar + automated flows)</li>
+                    <li><strong>Target Revenue:</strong> Maximize conversions before May-June peak pricing</li>
+                </ul>
+            </div>
+
+            <!-- Interactive Calendar for April 2026 -->
+            <div class="card" style="margin-top: 24px; padding: 24px;">
+                <h3 style="color: #f57c00; margin-top: 0; margin-bottom: 20px;">📅 April 2026 Campaign Calendar</h3>
+                <div class="campaign-calendar">
+                    <div class="calendar-header">
+                        <div class="calendar-day-name">Sun</div>
+                        <div class="calendar-day-name">Mon</div>
+                        <div class="calendar-day-name">Tue</div>
+                        <div class="calendar-day-name">Wed</div>
+                        <div class="calendar-day-name">Thu</div>
+                        <div class="calendar-day-name">Fri</div>
+                        <div class="calendar-day-name">Sat</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Week 1: Apr 1 is Wednesday -->
+                        <div class="calendar-day empty"><span class="day-number"></span></div>
+                        <div class="calendar-day empty"><span class="day-number"></span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-1-urgency">
+                            <span class="day-number">1</span>
+                            <div class="event-marker">🎓 Install Before Peak</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">2</span></div>
+                        <div class="calendar-day"><span class="day-number">3</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-1-urgency">
+                            <span class="day-number">4</span>
+                            <div class="event-marker">🎓 Install Before Peak</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">5</span></div>
+                        
+                        <!-- Week 2 -->
+                        <div class="calendar-day"><span class="day-number">6</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-7-warranty">
+                            <span class="day-number">7</span>
+                            <div class="event-marker">🎓 Warranty Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">8</span></div>
+                        <div class="calendar-day"><span class="day-number">9</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-7-warranty">
+                            <span class="day-number">10</span>
+                            <div class="event-marker">🎓 Warranty Education</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">11</span></div>
+                        <div class="calendar-day"><span class="day-number">12</span></div>
+                        
+                        <!-- Week 3 -->
+                        <div class="calendar-day has-event educational" data-scroll="#apr-13-sizing">
+                            <span class="day-number">13</span>
+                            <div class="event-marker">🎓 BTU Sizing</div>
+                        </div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-13-sizing">
+                            <span class="day-number">14</span>
+                            <div class="event-marker">🎓 BTU Sizing</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">15</span></div>
+                        <div class="calendar-day"><span class="day-number">16</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-13-sizing">
+                            <span class="day-number">17</span>
+                            <div class="event-marker">🎓 BTU Sizing</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">18</span></div>
+                        <div class="calendar-day"><span class="day-number">19</span></div>
+                        
+                        <!-- Week 4 -->
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#apr-20-earthday">
+                            <span class="day-number">20</span>
+                            <div class="event-marker">📅 Earth Day</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#apr-20-earthday">
+                            <span class="day-number">21</span>
+                            <div class="event-marker">📅 Earth Day</div>
+                        </div>
+                        <div class="calendar-day has-event calendar-holiday" data-scroll="#apr-20-earthday">
+                            <span class="day-number">22</span>
+                            <div class="event-marker">📅 Earth Day</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">23</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-24-multizone">
+                            <span class="day-number">24</span>
+                            <div class="event-marker">🎓 Multi-Zone Systems</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">25</span></div>
+                        <div class="calendar-day"><span class="day-number">26</span></div>
+                        
+                        <!-- Week 5 -->
+                        <div class="calendar-day has-event educational" data-scroll="#apr-24-multizone">
+                            <span class="day-number">27</span>
+                            <div class="event-marker">🎓 Multi-Zone Systems</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">28</span></div>
+                        <div class="calendar-day"><span class="day-number">29</span></div>
+                        <div class="calendar-day has-event educational" data-scroll="#apr-24-multizone">
+                            <span class="day-number">30</span>
+                            <div class="event-marker">🎓 Multi-Zone Systems</div>
+                        </div>
+                    </div>
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-color educational"></span>
+                            <span>🎓 Educational Campaign</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color calendar-holiday"></span>
+                            <span>📅 Calendar Holiday (kastalia Palma)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: #f57c00; margin-top: 32px;">📆 Chronological Campaign Calendar</h3>
+
+            <h4 id="apr-1-urgency" style="margin-top: 24px;">Apr 1, 4 — Install Before Peak Season <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <div class="card">
+                <div class="card-title">Campaign: "Why Installing Now Beats Waiting Until Summer"</div>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Segment:</strong> Cart abandoners from March, warm leads who haven't purchased</li>
+                    <li><strong>Educational Focus:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>April = installer availability before June rush</li>
+                            <li>Pricing stable before seasonal demand surge</li>
+                            <li>Avoid 2-4 week installation delays in peak summer</li>
+                            <li>Test your system before first heatwave</li>
+                            <li>May-June = higher prices and limited stock</li>
+                        </ul>
+                    </li>
+                    <li><strong>Offer:</strong> Shop Sale items (save 5%-48%) + priority installation scheduling</li>
+                    <li><strong>Sale Link:</strong> <a href="https://minisplitsforless.com/collections/sale" target="_blank">minisplitsforless.com/collections/sale</a></li>
+                    <li><strong>Send Schedule:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Apr 1 (Wednesday) - Urgency messaging kickoff</li>
+                            <li>Apr 4 (Saturday) - Weekend decision push</li>
+                        </ul>
+                    </li>
+                    <li><strong>Creative Hook:</strong> "Don't wait until it's 95°F—install now while contractors are available"</li>
+                    <li><strong>Mood/Association:</strong> Urgency, smart planning, avoiding summer rush</li>
+                </ul>
+            </div>
+
+            <h4 id="apr-7-warranty" style="margin-top: 24px;">Apr 7, 10 — Warranty & Protection Education <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <div class="card">
+                <div class="card-title">Campaign: "Mini Split Warranties Explained: What's Actually Covered"</div>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Segment:</strong> Browse abandoners comparing brands, warranty concerns</li>
+                    <li><strong>Educational Focus:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Standard warranty coverage: 5-12 years parts, 5-7 years compressor</li>
+                            <li>What's covered vs. what's not (installation, refrigerant, labor)</li>
+                            <li>Extended warranty options and value analysis</li>
+                            <li>Brand comparison: Cooper & Hunter vs. Bravo vs. Olmo warranties</li>
+                            <li>How to register warranty and file claims</li>
+                            <li>Long-term peace of mind = better investment protection</li>
+                        </ul>
+                    </li>
+                    <li><strong>Offer:</strong> Shop Sale items (save 5%-48%) + free warranty comparison guide</li>
+                    <li><strong>Sale Link:</strong> <a href="https://minisplitsforless.com/collections/sale" target="_blank">minisplitsforless.com/collections/sale</a></li>
+                    <li><strong>Send Schedule:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Apr 7 (Tuesday) - Warranty education intro</li>
+                            <li>Apr 10 (Friday) - Brand warranty comparison</li>
+                        </ul>
+                    </li>
+                    <li><strong>Creative Hook:</strong> "What happens if something breaks? Here's what warranties actually cover"</li>
+                    <li><strong>Mood/Association:</strong> Protection, confidence, risk reduction</li>
+                </ul>
+            </div>
+
+            <h4 id="apr-13-sizing" style="margin-top: 24px;">Apr 13, 14, 17 — Perfect BTU Sizing Guide <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <div class="card">
+                <div class="card-title">Campaign: "Get the Right BTU Size the First Time"</div>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Segment:</strong> Browsed multiple BTU sizes, unclear on sizing, cart abandoners</li>
+                    <li><strong>Educational Focus:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Square footage to BTU calculator (200-400 sq ft per 9K BTU)</li>
+                            <li>Factors affecting sizing: ceiling height, insulation, sun exposure, climate</li>
+                            <li>Oversizing risks: short cycling, inefficiency, higher costs</li>
+                            <li>Undersizing risks: poor cooling, overworked system, premature failure</li>
+                            <li>9K vs 12K vs 18K real-world room examples</li>
+                            <li>Interactive sizing tool with instant recommendations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Offer:</strong> Shop Sale items (save 5%-48%) + free sizing consultation</li>
+                    <li><strong>Sale Link:</strong> <a href="https://minisplitsforless.com/collections/sale" target="_blank">minisplitsforless.com/collections/sale</a></li>
+                    <li><strong>Send Schedule:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Apr 13 (Monday) - Sizing fundamentals</li>
+                            <li>Apr 14 (Tuesday) - Common sizing mistakes</li>
+                            <li>Apr 17 (Friday) - Room-by-room sizing examples</li>
+                        </ul>
+                    </li>
+                    <li><strong>Creative Hook:</strong> "The #1 mistake people make when choosing BTU size—and how to avoid it"</li>
+                    <li><strong>Mood/Association:</strong> Confidence, precision, expert guidance</li>
+                </ul>
+            </div>
+
+            <h4 id="apr-20-earthday" style="margin-top: 24px;">Apr 20-22 — Earth Day Sustainability <span style="color: #666; font-size: 14px;">📅 Calendar (kastalia Palma)</span></h4>
+            <div class="card">
+                <div class="card-title">Campaign: "Eco-Friendly Cooling: Celebrate Earth Day with Energy Efficiency"</div>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Timing:</strong> Send Apr 20-22 (Sunday-Tuesday) - Earth Day is Apr 22</li>
+                    <li><strong>Segment:</strong> Eco-conscious buyers, high SEER browsers, sustainability-focused customers</li>
+                    <li><strong>Hook:</strong> Sustainability and environmental impact</li>
+                    <li><strong>Educational Element:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Mini splits use 30-40% less energy than central AC</li>
+                            <li>R454B refrigerant = lower global warming potential</li>
+                            <li>High SEER2 ratings reduce carbon footprint</li>
+                            <li>Inverter technology = less wasted energy</li>
+                            <li>Ductless = no energy loss through leaky ducts (20-30% savings)</li>
+                            <li>Long lifespan (15-20 years) = less waste</li>
+                        </ul>
+                    </li>
+                    <li><strong>Offer:</strong> 5% discount + free carbon footprint calculator</li>
+                    <li><strong>Messaging:</strong> "Celebrate Earth Day by investing in sustainable home comfort"</li>
+                    <li><strong>Mood/Association:</strong> Environmental responsibility, green living, future generations</li>
+                </ul>
+            </div>
+
+            <h4 id="apr-24-multizone" style="margin-top: 24px;">Apr 24, 27, 30 — Multi-Zone System Benefits <span style="color: #666; font-size: 14px;">🎓 Educational</span></h4>
+            <div class="card">
+                <div class="card-title">Campaign: "Why Multi-Zone Systems Win for Whole-Home Comfort"</div>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Segment:</strong> Viewed multiple single-zone units, large home buyers, high-value shoppers</li>
+                    <li><strong>Educational Focus:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Multi-zone vs. multiple single-zones cost comparison</li>
+                            <li>Independent temperature control per room = personalized comfort</li>
+                            <li>One outdoor unit vs. multiple = cleaner exterior, easier maintenance</li>
+                            <li>2-zone, 3-zone, 4-zone, 5-zone configuration examples</li>
+                            <li>Installation advantages: fewer wall penetrations, shared line sets</li>
+                            <li>Energy efficiency: share compressor load, optimize usage per zone</li>
+                            <li>ROI calculation: upfront cost vs. long-term savings</li>
+                        </ul>
+                    </li>
+                    <li><strong>Offer:</strong> Shop Sale items (save 5%-48%) + free multi-zone design consultation</li>
+                    <li><strong>Sale Link:</strong> <a href="https://minisplitsforless.com/collections/sale" target="_blank">minisplitsforless.com/collections/sale</a></li>
+                    <li><strong>Send Schedule:</strong> 
+                        <ul style="margin-top: 8px;">
+                            <li>Apr 24 (Thursday) - Multi-zone benefits overview</li>
+                            <li>Apr 27 (Sunday) - Cost comparison and ROI</li>
+                            <li>Apr 30 (Wednesday) - Configuration examples and design tips</li>
+                        </ul>
+                    </li>
+                    <li><strong>Creative Hook:</strong> "Thinking about multiple mini splits? One multi-zone system might save you thousands"</li>
+                    <li><strong>Mood/Association:</strong> Smart investment, whole-home solution, value optimization</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #f57c00; margin-top: 48px;">🛒 Cart Recovery & Automated Flows</h3>
+            <div class="card">
+                <p><strong>Always-On Automation:</strong> Same flows continue throughout April with increased urgency messaging</p>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Cart Abandonment (Day 3):</strong> Point to Sale collection (save 5%-48%) + "Stock running low" urgency</li>
+                    <li><strong>Cart Abandonment (Day 7):</strong> 7% final offer + "Installers booking up fast"</li>
+                    <li><strong>Browse Abandonment (Day 5):</strong> Educational content + Sale collection link + peak season warning</li>
+                    <li><strong>Checkout Abandonment (24 hours):</strong> 10% aggressive recovery + free shipping threshold</li>
                 </ul>
             </div>
 
